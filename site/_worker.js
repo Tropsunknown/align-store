@@ -1,17 +1,17 @@
 /**
- * ============================================================
- *  ALIGN — Cloudflare Worker (Pages "advanced mode")
- *  ------------------------------------------------------------
- *  Routes:
- *    POST /api/checkout  → creates a Stripe Checkout Session
- *    POST /api/webhook   → Stripe → Discord notification
- *    POST /api/track     → admin: email the customer a tracking link
- *    everything else     → static site in this folder
+- ============================================================
+-  ALIGN — Cloudflare Worker (Pages "advanced mode")
+-  ------------------------------------------------------------
+-  Routes:
+-    POST /api/checkout  → creates a Stripe Checkout Session
+-    POST /api/webhook   → Stripe → Discord notification
+-    POST /api/track     → admin: email the customer a tracking link
+-    everything else     → static site in this folder
  *
- *  Prices are NOT duplicated here — they are read from
- *  /data/products.json, the same file the storefront uses.
- *  That means a customer can never invent a price.
- * ============================================================
+-  Prices are NOT duplicated here — they are read from
+-  /data/products.json, the same file the storefront uses.
+-  That means a customer can never invent a price.
+- ============================================================
  */
 
 /* ---------- supplier links (private: never sent to the browser) ---------- */
@@ -198,6 +198,7 @@ async function handleCheckout(request, env) {
   // free shipping, always
   form.append('shipping_options[0][shipping_rate_data][type]', 'fixed_amount');
   form.append('shipping_options[0][shipping_rate_data][fixed_amount][amount]', '0');
+  form.append('shipping_options[0][shipping_rate_data][fixed_amount][currency]', catalog.currency || 'usd');
   form.append('shipping_options[0][shipping_rate_data][display_name]', 'Free worldwide shipping');
   form.append('shipping_options[0][shipping_rate_data][delivery_estimate][minimum][value]', '6');
   form.append('shipping_options[0][shipping_rate_data][delivery_estimate][minimum][unit]', 'business_day');
