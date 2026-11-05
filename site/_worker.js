@@ -196,14 +196,6 @@ async function handleCheckout(request, env) {
   SHIP_COUNTRIES.forEach((c, i) => form.append(`shipping_address_collection[allowed_countries][${i}]`, c));
 
   // free shipping, always (explicitly structured with currency to satisfy Stripe)
-  form.append('shipping_options[0][shipping_rate_data][type]', 'fixed_amount');
-  form.append('shipping_options[0][shipping_rate_data][fixed_amount][amount]', '0');
-  form.append('shipping_options[0][shipping_rate_data][fixed_amount][currency]', catalog.currency || 'usd');
-  form.append('shipping_options[0][shipping_rate_data][display_name]', 'Free worldwide shipping');
-  form.append('shipping_options[0][shipping_rate_data][delivery_estimate][minimum][value]', '6');
-  form.append('shipping_options[0][shipping_rate_data][delivery_estimate][minimum][unit]', 'business_day');
-  form.append('shipping_options[0][shipping_rate_data][delivery_estimate][maximum][value]', '12');
-  form.append('shipping_options[0][shipping_rate_data][delivery_estimate][maximum][unit]', 'business_day');
 
   try {
     const session = await stripeRequest(env, 'checkout/sessions', form);
