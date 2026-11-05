@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order confirmed — ALIGN</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0b0c'/%3E%3Cpath d='M32 14 44 50h-7l-2.6-8H27.6L25 50h-7L32 14Zm0 12-3.6 11h7.2L32 26Z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body data-nav="solid">
+
+<nav class="nav solid" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">ALIGN</a>
+    <div class="nav-links">
+      <a href="/#collection">Collection</a>
+      <a href="/#how">How it works</a>
+      <a href="/#faq">Support</a>
+    </div>
+    <div class="nav-right">
+      <button class="cart-btn" data-open-cart aria-label="Open bag">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 6h10l1 11H4L5 6Z" stroke-linejoin="round"/><path d="M7.5 6V4.5a2.5 2.5 0 0 1 5 0V6"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main style="padding:calc(var(--nav-h) + 72px) 0 120px">
+  <div class="wrap-narrow">
+    <div class="panel">
+      <div class="tick">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m4 10.5 4 4 8-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h1 class="h3" style="margin-bottom:10px">Order confirmed.</h1>
+      <p class="muted" style="margin:0">Thank you — payment went through and your order is in the queue.</p>
+
+      <div class="note-box" style="margin-top:22px">
+        Order reference <strong id="orderRef" style="color:var(--ink)">#—</strong><br>
+        A Stripe receipt is on its way to your inbox.
+      </div>
+
+      <ul class="timeline">
+        <li><strong>Order received</strong>Stripe has taken payment and sent your receipt.</li>
+        <li><strong>Packed within 24 hours</strong>We hand your order to the warehouse today or tomorrow.</li>
+        <li><strong>Tracking by email</strong>You’ll get a link the moment the carrier scans the parcel — usually 2–4 days.</li>
+        <li><strong>Delivered</strong>Most orders land between 6 and 12 business days.</li>
+      </ul>
+
+      <a class="btn btn-primary btn-block" href="/" style="margin-top:28px">Back to the store</a>
+      <p class="tiny" style="text-align:center;margin:16px 0 0">Something wrong? Reply to your receipt email and a human will answer.</p>
+    </div>
+  </div>
+</main>
+
+<script src="/app.js"></script>
+</body>
+</html>

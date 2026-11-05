@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orders console — ALIGN</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0b0c'/%3E%3Cpath d='M32 14 44 50h-7l-2.6-8H27.6L25 50h-7L32 14Zm0 12-3.6 11h7.2L32 26Z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .console { padding: calc(var(--nav-h) + 56px) 0 100px; }
+  .console-grid { display:grid; grid-template-columns: 1fr 0.85fr; gap:26px; align-items:start; }
+  @media (max-width: 900px){ .console-grid{ grid-template-columns:1fr } }
+  .sop { background:var(--tint); border-radius:var(--radius-m); padding:26px 28px; }
+  .sop ol { margin:0; padding-left:18px; font-size:14px; line-height:1.7; color:var(--muted); }
+  .sop li { margin-bottom:12px; }
+  .sop li strong { color:var(--ink); font-weight:500; }
+  .sop code { background:#fff; border:1px solid var(--line); border-radius:5px; padding:1px 5px; font-size:12px; }
+  .result { margin-top:18px; }
+  .result pre { white-space:pre-wrap; font-size:12.5px; background:var(--tint); padding:14px; border-radius:10px; margin:0; line-height:1.6; overflow-x:auto; }
+</style>
+</head>
+<body data-nav="solid">
+
+<nav class="nav solid" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">ALIGN</a>
+    <div class="nav-links">
+      <a href="/">Storefront</a>
+      <a href="/#faq">Support</a>
+    </div>
+    <div class="nav-right">
+      <span class="tiny">Internal</span>
+    </div>
+  </div>
+</nav>
+
+<main class="console">
+  <div class="wrap">
+    <p class="eyebrow">Operations</p>
+    <h1 class="h2" style="max-width:16ch">Orders console.</h1>
+    <p class="lede" style="margin:18px 0 40px">Paste the Stripe session ID from your Discord notification, add the tracking number, and the customer gets an email with it. No database, no admin account — the shared token is the key.</p>
+
+    <div class="console-grid">
+      <div class="panel">
+        <form id="trackForm" class="form-grid">
+          <label class="fld">Admin token
+            <input type="password" id="token" placeholder="the ADMIN_TOKEN you set in Cloudflare" autocomplete="off" required>
+          </label>
+          <label class="fld">Stripe session ID
+            <input type="text" id="sessionId" placeholder="cs_test_a1B2c3…" autocomplete="off" required>
+          </label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <label class="fld">Carrier
+              <select id="carrier">
+                <option>AliExpress Standard Shipping</option>
+                <option>Cainiao Super Economy</option>
+                <option>YunExpress</option>
+                <option>4PX</option>
+                <option>CJ Packet</option>
+                <option>DHL eCommerce</option>
+                <option>Other / see tracking link</option>
+              </select>
+            </label>
+            <label class="fld">Tracking number
+              <input type="text" id="tracking" placeholder="LP00123456789" autocomplete="off" required>
+            </label>
+          </div>
+          <button class="btn btn-primary btn-block" type="submit" id="sendBtn">Notify customer</button>
+        </form>
+        <div class="result" id="result"></div>
+        <div class="note-box">The token is stored in this browser tab only. The worker compares it to <code>ADMIN_TOKEN</code>, then looks the session up in Stripe to find the customer’s email — so guessing a session ID gets you nothing.</div>
+      </div>
+
+      <aside class="sop">
+        <p class="eyebrow" style="margin-bottom:14px">Daily runbook</p>
+        <ol>
+          <li><strong>Read Discord.</strong> Each paid order arrives as its own message with name, item, variant and full address.</li>
+          <li><strong>Order it.</strong> Open the supplier link in that message, buy it, ship to the customer’s address exactly as written. Do not “correct” the address.</li>
+          <li><strong>Note the order.</strong> Keep a spreadsheet row: date, Stripe session ID, supplier order number, cost.</li>
+          <li><strong>Wait for the tracking number</strong> from the supplier — usually 2–4 days.</li>
+          <li><strong>Paste it here.</strong> Customer gets a nice email automatically; Discord gets a “shipped” line.</li>
+          <li><strong>Refunds</strong> happen in the Stripe dashboard, not here.</li>
+        </ol>
+        <div class="note-box">Margin check: sell at 3–5× your supplier cost. After Stripe’s ~3% + 30¢ you should still clear 60%+.</div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<script src="/admin.js"></script>
+</body>
+</html>

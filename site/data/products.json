@@ -1,0 +1,129 @@
+{
+  "currency": "usd",
+  "brand": "ALIGN",
+  "shipping": {
+    "free": true,
+    "estimate": "6–12 business days",
+    "returns": "30 days, no questions"
+  },
+  "products": [
+    {
+      "id": "fascia-roller",
+      "name": "Fascia Roller",
+      "eyebrow": "Feet · Daily reset",
+      "tagline": "Sixty seconds. Feet that feel like yours again.",
+      "price": 3400,
+      "compareAt": 4800,
+      "badge": "Best seller",
+      "image": "/assets/foot-roller.webp",
+      "gallery": ["/assets/foot-roller.webp"],
+      "summary": "A textured roller built for the soles of your feet — the one part of you that never gets stretched. Roll for a minute after shoes come off and the tightness in your arch, heel and calves starts letting go.",
+      "bullets": [
+        "Over 400 pressure points work the arch, heel and fascia at once",
+        "Weighted core keeps it still on tile, wood or gym floor",
+        "30 cm and 380 g — it lives in a carry-on",
+        "Use it barefoot, in socks, or as a warm-up before running"
+      ],
+      "specs": [
+        ["Length", "30 cm"],
+        ["Weight", "380 g"],
+        ["Material", "TPR surface, rigid PP core"],
+        ["Colours", "Dove, Mint, Lilac, Blush"],
+        ["Care", "Wipe clean with a damp cloth"]
+      ],
+      "variants": [
+        { "label": "Dove", "delta": 0 },
+        { "label": "Mint", "delta": 0 },
+        { "label": "Lilac", "delta": 0 },
+        { "label": "Blush", "delta": 0 }
+      ]
+    },
+    {
+      "id": "posture-corrector",
+      "name": "Posture Corrector",
+      "eyebrow": "Back · Desk recovery",
+      "tagline": "Undo the eight hours you spent hunched.",
+      "price": 3900,
+      "compareAt": 5500,
+      "badge": "Most gifted",
+      "image": "/assets/posture-corrector.webp",
+      "gallery": ["/assets/posture-corrector.webp"],
+      "summary": "A figure-eight brace that pulls your shoulders back into the position they were designed to hold. Wear it for fifteen minutes a day and your back relearns the shape — no foam roller, no chiropractor appointment.",
+      "bullets": [
+        "Figure-eight straps open the chest without pinching the underarm",
+        "Breathable mesh panel sits flat under a shirt",
+        "Eight points of adjustment — set it once and forget it",
+        "Fifteen minutes a day is the entire protocol"
+      ],
+      "specs": [
+        ["Sizes", "S/M, L/XL"],
+        ["Material", "Nylon mesh, neoprene edging"],
+        ["Closure", "Hook and loop"],
+        ["Support", "Medium-firm"],
+        ["Care", "Hand wash, air dry"]
+      ],
+      "variants": [
+        { "label": "S/M", "delta": 0 },
+        { "label": "L/XL", "delta": 0 }
+      ]
+    },
+    {
+      "id": "heel-support",
+      "name": "Heel Support Wrap",
+      "eyebrow": "Feet · Plantar",
+      "tagline": "First-step pain, meet its match.",
+      "price": 2600,
+      "compareAt": 3800,
+      "badge": null,
+      "image": "/assets/heel-pads.webp",
+      "gallery": ["/assets/heel-pads.webp"],
+      "summary": "The sharp pain of that first step out of bed is the plantar fascia complaining. An anatomical gel heel cup takes the impact, and a compression strap lifts the arch so the fascia stops being stretched all day.",
+      "bullets": [
+        "Gel heel cup absorbs impact on hard floors and concrete",
+        "Compression strap wraps the arch and takes load off the fascia",
+        "Wear it barefoot, in socks, or inside a trainer",
+        "Sold as a properly shaped pair — left and right differ"
+      ],
+      "specs": [
+        ["Material", "Neoprene with medical-grade gel"],
+        ["Fit", "One size, fully adjustable"],
+        ["In shoe", "Fits most trainers and boots"],
+        ["Care", "Hand wash, air dry"],
+        ["Pack", "One pair"]
+      ],
+      "variants": [
+        { "label": "One pair", "delta": 0 },
+        { "label": "Two pairs", "delta": 1600 }
+      ]
+    },
+    {
+      "id": "heat-therapy-brace",
+      "name": "Heat Therapy Brace",
+      "eyebrow": "Joint · Heat + vibration",
+      "tagline": "Three heat levels. One warm shoulder at 9pm.",
+      "price": 5900,
+      "compareAt": 7900,
+      "badge": "New",
+      "image": "/assets/heat-massager.webp",
+      "gallery": ["/assets/heat-massager.webp"],
+      "summary": "Heat and gentle vibration in a wrap that fits a shoulder or a knee. It runs off USB, so it works on the sofa, in the car or from a power bank in a tent — and it shuts itself off after thirty minutes.",
+      "bullets": [
+        "3 heat levels — 45 °C, 55 °C, 65 °C — plus vibration",
+        "USB-powered: power bank, laptop, wall adapter",
+        "Heats in under 60 seconds, auto shut-off at 30 minutes",
+        "One strap, two joints: shoulder or knee"
+      ],
+      "specs": [
+        ["Heat", "45 / 55 / 65 °C"],
+        ["Power", "USB 5V 2A"],
+        ["Auto shut-off", "30 minutes"],
+        ["Fit", "Shoulder and knee"],
+        ["Care", "Wipe the shell, do not submerge"]
+      ],
+      "variants": [
+        { "label": "Shoulder", "delta": 0 },
+        { "label": "Knee", "delta": 0 }
+      ]
+    }
+  ]
+}
